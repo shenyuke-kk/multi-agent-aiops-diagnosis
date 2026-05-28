@@ -544,7 +544,25 @@ http://localhost:9900
 
 ---
 
-## 10. 项目结构
+## 10. 效果展示
+
+### 10.1 前端多 Agent 诊断入口
+
+![前端多 Agent 诊断入口](docs/images/frontend_multi_agent.png)
+
+### 10.2 多 Agent 诊断报告
+
+![多 Agent 诊断报告](docs/images/diagnosis_report.png)
+
+### 10.3 FastAPI 接口文档
+
+![FastAPI 多 Agent 接口](docs/images/api_aiops_multi.png)
+
+### 10.4 自动化评测结果
+
+![自动化评测结果](docs/images/eval_result.png)
+
+## 11. 项目结构
 
 ```text
 super_biz_agent_py/
@@ -639,9 +657,9 @@ super_biz_agent_py/
 
 ---
 
-## 11. 核心实现说明
+## 12. 核心实现说明
 
-### 11.1 RAG 检索流程
+### 12.1 RAG 检索流程
 
 ```text
 用户问题
@@ -651,7 +669,7 @@ super_biz_agent_py/
 → LLM 结合上下文生成回答
 ```
 
-### 11.2 本地观测数据查询
+### 12.2 本地观测数据查询
 
 系统新增两个本地工具：
 
@@ -671,7 +689,7 @@ super_biz_agent_py/
 
 ---
 
-### 11.3 多 Agent 共享状态
+### 12.3 多 Agent 共享状态
 
 多 Agent 通过 `MultiAIOpsState` 共享信息：
 
@@ -691,7 +709,7 @@ final_report
 
 ---
 
-## 12. 自动化评测
+## 13. 自动化评测
 
 评测脚本：
 
@@ -724,9 +742,9 @@ eval/results/
 
 ---
 
-## 13. 常见问题
+## 14. 常见问题
 
-### 13.1 PowerShell 无法激活虚拟环境
+### 14.1 PowerShell 无法激活虚拟环境
 
 如果遇到：
 
@@ -749,7 +767,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 ---
 
-### 13.2 Docker 连接失败
+### 14.2 Docker 连接失败
 
 先确认 Docker Desktop 已启动。
 
@@ -767,7 +785,7 @@ docker compose -f vector-database.yml up -d
 
 ---
 
-### 13.3 Milvus 端口冲突
+### 14.3 Milvus 端口冲突
 
 检查端口：
 
@@ -779,7 +797,7 @@ netstat -ano | findstr :19530
 
 ---
 
-### 13.4 FastAPI 端口被占用
+### 14.4 FastAPI 端口被占用
 
 检查 9900 端口：
 
@@ -795,7 +813,7 @@ taskkill /F /PID <PID>
 
 ---
 
-### 13.5 API Key 错误
+### 14.5 API Key 错误
 
 检查 `.env`：
 
@@ -807,7 +825,7 @@ type .env | findstr DASHSCOPE_API_KEY
 
 ---
 
-## 14. 后续优化方向
+## 15. 后续优化方向
 
 * 将 RootCauseAgent 从规则判断升级为 LLM 推理版本；
 * 使用 LangGraph 构建可视化多 Agent 状态流；
@@ -820,7 +838,7 @@ type .env | findstr DASHSCOPE_API_KEY
 
 ---
 
-## 15. 参考资源
+## 16. 参考资源
 
 * [FastAPI 文档](https://fastapi.tiangolo.com/)
 * [LangChain 文档](https://python.langchain.com/)
@@ -833,7 +851,7 @@ type .env | findstr DASHSCOPE_API_KEY
 
 ---
 
-## 16. License
+## 17. License
 
 MIT License
 
